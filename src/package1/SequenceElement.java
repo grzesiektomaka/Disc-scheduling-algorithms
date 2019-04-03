@@ -2,7 +2,7 @@ package package1;
 
 public class SequenceElement {
 
-    private int position;
+    private int position = 0;
     private boolean used_info = false;
 
     public int getPosition() {
@@ -11,7 +11,7 @@ public class SequenceElement {
     }
 
     public boolean getUsedInfo() {
-        
+
         return used_info;
     }
 
