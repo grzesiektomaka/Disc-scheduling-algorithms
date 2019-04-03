@@ -21,5 +21,10 @@ public class Main {
         scan.write(head, tab);
         scan.execute();
         scan.result();
+
+        CSCAN cscan = new CSCAN();
+        cscan.write(head, tab);
+        cscan.execute();
+        cscan.result();
     }
 }
