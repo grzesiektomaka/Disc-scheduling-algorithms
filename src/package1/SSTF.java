@@ -58,7 +58,7 @@ public class SSTF {
                     }
 
                 }
-                
+
                 execution_time = execution_time + minimum;
                 head_position = elements[index].getPosition();
                 elements[index].setUsedInfo(true);

@@ -9,7 +9,6 @@ public class Main {
         int head = 50;
 
         FCFS fcfs = new FCFS(head,tab);
-
         fcfs.execute();
         fcfs.result();
 
@@ -17,5 +16,10 @@ public class Main {
         sstf.write(head, tab);
         sstf.execute();
         sstf.result();
+
+        SCAN scan = new SCAN();
+        scan.write(head, tab);
+        scan.execute();
+        scan.result();
     }
 }
