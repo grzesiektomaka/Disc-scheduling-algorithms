@@ -32,5 +32,10 @@ public class Main {
         edf.write(head, tab, deadl);
         edf.execute();
         edf.result();
+
+        FDSCAN fdscan = new FDSCAN();
+        fdscan.write(head, tab, deadl);
+        fdscan.execute();
+        fdscan.result();
     }
 }

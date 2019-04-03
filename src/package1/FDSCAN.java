@@ -1,6 +1,6 @@
 package package1;
 
-public class EDF {
+public class FDSCAN {
     private int initial_head_position;
     private int result_sequence[];
     SequenceElement elements[];
@@ -57,23 +57,48 @@ public class EDF {
 
     public void execute ()
     {
+
+
         int head_position = initial_head_position;
 
         int j = 0;
 
         for (int i = 0; i < sec_length; i++){
 
-            execution_time = execution_time + Math.abs(head_position - elements[i].getPosition());
-            head_position = elements[i].getPosition();
-            result_sequence[j] = elements[i].getPosition();
-            j++;
+            if(!elements[i].getUsedInfo()) {
+
+                for(int k = 0; k < sec_length - 1; k++){
+
+
+                        if ( elements[k].getUsedInfo() == false && elements[k].getPosition() > head_position && elements[k].getPosition() < elements[i].getPosition() && k != i) {
+
+                            execution_time = execution_time + Math.abs(head_position - elements[k].getPosition());
+                            head_position = elements[k].getPosition();
+                            elements[k].setUsedInfo(true);
+                            result_sequence[j] = elements[k].getPosition();
+                            j++;
+                        }
+
+
+                }
+
+                execution_time = execution_time + Math.abs(head_position - elements[i].getPosition());
+                head_position = elements[i].getPosition();
+                elements[i].setUsedInfo(true);
+                result_sequence[j] = elements[i].getPosition();
+                j++;
+
+
+            }
+
+
         }
 
     }
 
     public void result() {
 
-        System.out.print("EDF:    " + execution_time + "    Sequence: ");
+        System.out.print("FDSCAN: " + execution_time + "    Sequence: ");
 
         for (int i = 0; i < sec_length; i++) {
 
