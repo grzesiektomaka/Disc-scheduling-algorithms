@@ -6,6 +6,7 @@ public class Main {
 
 
         int tab[] = {45, 21, 67, 90, 4, 50};
+        int deadl[] = {7 , 12, 3, 67, 5, 1};
         int head = 50;
 
         FCFS fcfs = new FCFS(head,tab);
@@ -26,5 +27,10 @@ public class Main {
         cscan.write(head, tab);
         cscan.execute();
         cscan.result();
+
+        EDF edf = new EDF();
+        edf.write(head, tab, deadl);
+        edf.execute();
+        edf.result();
     }
 }
